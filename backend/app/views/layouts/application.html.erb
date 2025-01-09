@@ -1,29 +1,24 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <title>Web User</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbo-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbo-track': 'reload' %>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Your app description">
+    <meta name="author" content="Your name">
+
+    <title><%= content_for?(:title) ? yield(:title) : "Your App Title" %></title>
+
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag "cover", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
   </head>
-  <body>
-    <header>
-      <h1>Web User</h1>
-      <nav>
-        <ul>
-          <li><%= link_to 'Home'%></li>
-        </ul>
-      </nav>
-    </header>
-
-    <main>
+  <body class="text-center">
+  <div class="cover-container d-flex h-100 p-3 mx-auto flex-column">
+    <%= render 'layouts/shared/header' %>
+    <main role="main" class="inner cover">
       <%= yield %>
     </main>
-
-    <footer>
-      <p>Le Tan Khang</p>
-    </footer>
-  </body>
+    <%= render 'layouts/shared/footer' %>
+  </div>
+</body>
 </html>

@@ -1,17 +1,12 @@
-import logo from './logo.svg';
-import './App.css';
 import React from 'react';
-import Layout from './components/Layout';
+import Home from './pages/Home';
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <Layout>
-        <h2>Welcome to SBR</h2>
-        <p>This is a booking services</p>
-      </Layout>
+    <div>
+      <Home />
     </div>
   );
-}
+};
 
 export default App;

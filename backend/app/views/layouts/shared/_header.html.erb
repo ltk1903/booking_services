@@ -5,6 +5,12 @@
       <a class="nav-link active" href="#">Home</a>
       <a class="nav-link" href="#">Features</a>
       <a class="nav-link" href="#">Contact</a>
+      <% if user_signed_in? %>
+        <span class="nav-link disabled"><%= current_user.email %></span>
+        <%= button_to "Logout", destroy_user_session_path, method: :delete, class: "btn btn-link nav-link", form: { data: { turbo: "true" } } %>
+      <% else %>
+        <a class="nav-link" href="<%= new_user_session_path %>">Login</a>
+      <% end %>
     </nav>
   </div>
 </header>

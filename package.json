@@ -4,5 +4,8 @@
   "workspaces": [
     "backend",
     "frontend"
-  ]
+  ],
+  "dependencies": {
+    "caniuse-lite": "^1.0.30001690"
+  }
 }

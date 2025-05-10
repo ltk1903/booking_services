@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Your app description">
+    <meta name="author" content="Your name">
+
+    <title><%= content_for?(:title) ? yield(:title) : "Your App Title" %></title>
+
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag "cover", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+  </head>
+  <body class="text-center">
+  <div class="cover-container d-flex h-100 p-3 mx-auto flex-column">
+    <%= render 'layouts/shared/header' %>
+    <main role="main" class="inner cover">
+      <%= yield %>
+    </main>
+    <%= render 'layouts/shared/footer' %>
+  </div>
+</body>
+</html>
